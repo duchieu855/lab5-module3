@@ -72,6 +72,7 @@ function Form() {
 					onBlur={handleBlur}
 					error={errors.massage}
 				/>
+				<input type="file" name="upLoad" id="upLoad" />
 				<button className="px-2 py-[2px] bg-neutral-400 rounded-md">
 					Submit
 				</button>
