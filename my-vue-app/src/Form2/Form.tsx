@@ -12,7 +12,7 @@ function BookManageApp() {
 	const [book, setBook] = useState({ id: 0, title: "", quantity: "" });
 	const [error, setError] = useState({ title: "", quantity: "" });
 	const [books, setBooks] = useState<Book[]>([]);
-	console.log(error);
+	// console.log(error);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const valueInput: string = e.target.value;
@@ -101,9 +101,11 @@ function BookManageApp() {
 
 			<table className="w-[400px] mx-auto p-3 border">
 				<thead>
-					<th>Title</th>
-					<th>Quantity</th>
-					<th>Actions</th>
+					<tr>
+						<th>Title</th>
+						<th>Quantity</th>
+						<th>Actions</th>
+					</tr>
 				</thead>
 				<tbody className="text-center space-y-2">
 					{books.map((book) => (

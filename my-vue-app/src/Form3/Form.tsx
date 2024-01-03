@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import TemptForm from "./TemptForm";
 
 function Form() {
-	const REGEX = { email: /^[a-zA-Z0-9+-]+@[a-zA-Z0-9-]+$/ };
+	const REGEX = {
+		email:
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+	};
 
 	const [dataForm, setDataForm] = useState({ to: "", title: "", massage: "" });
 	const [errors, setErrors] = useState({ to: "", title: "", massage: "" });
@@ -25,7 +28,14 @@ function Form() {
 	};
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		if (REGEX.email.test(dataForm.to)) {
+		console.log(
+			REGEX.email.test(dataForm.to),
+			Object.values(errors).every((error) => error === "")
+		);
+		if (
+			REGEX.email.test(dataForm.to) &&
+			Object.values(errors).every((error) => error === "")
+		) {
 			alert("success");
 		} else {
 			setErrors((preErrors) => ({ ...preErrors, to: "Invalid email address" }));
@@ -34,10 +44,13 @@ function Form() {
 
 	return (
 		<>
-			<form onSubmit={handleSubmit}>
+			<form
+				onSubmit={handleSubmit}
+				className="mx-auto p-2 bg-orange-400 text-indigo-600 w-[500px] flex flex-col space-y-3"
+			>
 				<TemptForm
 					name="to"
-					type="email"
+					type="text"
 					value={dataForm.to}
 					onChange={handleChange}
 					onBlur={handleBlur}
@@ -59,7 +72,9 @@ function Form() {
 					onBlur={handleBlur}
 					error={errors.massage}
 				/>
-				<button type="button">Submit</button>
+				<button className="px-2 py-[2px] bg-neutral-400 rounded-md">
+					Submit
+				</button>
 			</form>
 		</>
 	);

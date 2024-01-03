@@ -18,7 +18,7 @@ const TemptForm: React.FC<TemptForm> = ({
 	onBlur,
 }) => {
 	return (
-		<div>
+		<div className="flex flex-col text-start">
 			<label htmlFor={name}>{name}</label>
 			<input
 				type={type}
