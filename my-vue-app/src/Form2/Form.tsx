@@ -49,16 +49,16 @@ function BookManageApp() {
 					const newBooks = [...preData];
 					newBooks.splice(indexBookEdited, 1, book);
 					console.log(newBooks);
-					setBook({ id: 0, title: "", quantity: "" });
+
 					return newBooks;
 				} else {
-					setBook({ id: 0, title: "", quantity: "" });
 					return [
 						...preData,
 						{ ...book, id: Math.floor(Math.random() * 10000) },
 					];
 				}
 			});
+			setBook({ id: 0, title: "", quantity: "" });
 		}
 	};
 
