@@ -4,6 +4,7 @@ import Form2 from "./Form2/Form.tsx";
 import Form3 from "./Form3/Form.tsx";
 import Login from "./login/Login.tsx";
 import Book from "./BookApp/Book.tsx";
+import AxiosAPI from "./MockAPI/AxiosAPI.tsx";
 
 function App() {
 	return (
@@ -11,8 +12,9 @@ function App() {
 			{/* <Form1 />
 			<Form2 />
 			<Form3 /> */}
-			<Login />
+			{/* <Login /> */}
 			{/* <Book /> */}
+			<AxiosAPI />
 		</div>
 	);
 }
