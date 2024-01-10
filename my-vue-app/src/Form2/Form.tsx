@@ -74,7 +74,7 @@ function BookManageApp() {
 	};
 
 	return (
-		<div className="space-y-3">
+		<div className="space-y-3" id="library_form">
 			<h2 className="text-2xl font-bold text-center">Library</h2>
 			<form
 				onSubmit={handleSubmit}

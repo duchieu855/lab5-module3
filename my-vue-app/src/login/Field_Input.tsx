@@ -21,9 +21,8 @@ const FieldInput: React.FC<TypeFieldInput> = ({
 	onBlur,
 	error,
 }) => {
-	
 	return (
-		<div className="flex flex-col space-y-3">
+		<div className="flex flex-col space-y-3" id="login">
 			<label htmlFor={name}>{title}</label>
 			<input
 				ref={refInput}

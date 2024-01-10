@@ -52,7 +52,7 @@ function Form1() {
 	};
 
 	return (
-		<div>
+		<div id="contact_form">
 			<h2 className="text-2xl font-bold text-center py-2">Contact Form</h2>
 			<form
 				className="w-[500px] text-center space-y-2 text-purple-600 mx-auto border p-2 bg-orange-200"

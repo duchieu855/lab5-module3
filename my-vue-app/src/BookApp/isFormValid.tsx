@@ -1,6 +1,4 @@
-import { FieldValues, FieldErrors } from "react-hook-form";
-
-export const isFormValid = (err: FieldErrors<FieldValues>) => {
+export const isFormValid = (err: object) => {
 	if (Object.keys(err).length > 0) {
 		return true;
 	}

@@ -47,6 +47,7 @@ function Form() {
 			<form
 				onSubmit={handleSubmit}
 				className="mx-auto p-2 bg-orange-400 text-indigo-600 w-[500px] flex flex-col space-y-3"
+				id="mail_form"
 			>
 				<TemptForm
 					name="to"
